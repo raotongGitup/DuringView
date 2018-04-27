@@ -28,6 +28,7 @@ public class RadarView extends View {
 
     //中心点X坐标
     private int centerX;
+
     //中心点Y坐标
     private int centerY;
     //蛛网的最大半径

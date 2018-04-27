@@ -28,6 +28,7 @@ public class ScroolView extends View {
 
     /**
      * y轴高度
+     *
      */
     private int hight;
     Paint paint;

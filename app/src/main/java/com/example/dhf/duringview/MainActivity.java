@@ -11,6 +11,7 @@ import com.example.dhf.duringview.wavesView.LD_WaveView;
  */
 public class MainActivity extends AppCompatActivity {
 
+
     private LD_WaveView ldWaveView;
     private int progrees = 0;//进度private
     private Handler handler = new Handler() {

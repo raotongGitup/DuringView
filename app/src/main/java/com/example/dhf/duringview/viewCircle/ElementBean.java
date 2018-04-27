@@ -12,6 +12,7 @@ public class ElementBean {
     public ElementBean(String title, int value) {
         this.title = title;
         this.value = value;
+
     }
 
     public String getTitle() {

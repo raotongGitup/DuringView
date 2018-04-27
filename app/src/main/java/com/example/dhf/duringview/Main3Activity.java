@@ -20,6 +20,7 @@ public class Main3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
         radarView = ((RadarView) findViewById(R.id.radarview));
+
         mElementBeanList.add(new ElementBean("打野",20));
         mElementBeanList.add(new ElementBean("上单",70));
         mElementBeanList.add(new ElementBean("中路",90));

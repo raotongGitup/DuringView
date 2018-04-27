@@ -29,6 +29,7 @@ public class BasehorizontaiScyollview extends View {
 
     float with;
     float hight;
+
     float with_x = 0;
     float hifh_y = 0;
     private Context context;

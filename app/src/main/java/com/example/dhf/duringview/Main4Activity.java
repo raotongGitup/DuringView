@@ -15,6 +15,7 @@ import java.util.Random;
  * 绘制折线图
  */
 public class Main4Activity extends AppCompatActivity {
+
     private ScroolView scroolView;
     private List<PointF> pointFS = new ArrayList<>();
     @Override

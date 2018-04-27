@@ -83,6 +83,7 @@ public class CircleImageView extends ImageView {
         }
     }
 
+
     @Override
     public ScaleType getScaleType() {
         return SCALE_TYPE;
