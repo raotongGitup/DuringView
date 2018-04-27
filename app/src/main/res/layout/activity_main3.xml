@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:rv="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.dhf.duringview.Main3Activity">
+    <com.example.dhf.duringview.viewCircle.RadarView
+        android:layout_centerInParent="true"
+        android:id="@+id/radarview"
+        rv:maxRadius="95dp"
+        rv:netWidth="1px"
+        rv:netColor="@color/taobao_black"
+        rv:rvTextColor="@color/taobao_black"
+        rv:rvTextSize="8sp"
+        rv:netPointColor="@color/colorPrimary"
+        rv:netPointRadius="1dp"
+        rv:coverColor="@color/color_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>
