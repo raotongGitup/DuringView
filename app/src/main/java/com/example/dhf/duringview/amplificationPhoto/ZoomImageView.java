@@ -29,6 +29,7 @@ public class ZoomImageView extends ImageView implements View.OnTouchListener, Sc
     /**
      * 初始化时缩放的值
      */
+
     private float mInitScale;
 
     /**
