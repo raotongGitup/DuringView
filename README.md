@@ -83,13 +83,17 @@ v1.0.0 暂时只是初步实现以上功能，后期会完善相应功能，和�
         android:background="#000"
         android:scrollbars="none">
 
-        <com.example.dhf.duringview.satelliteSpiderView.ScroolView
+        <com.example.duringlibrary.satelliteSpiderView.ScroolView
             android:id="@+id/scrollView_zx"
             android:layout_width="match_parent"
             android:layout_height="200dp" />
     </HorizontalScrollView>
-     
-      
+    
+    这个是直线可以左右滑动的如果不想滑动可以去掉HorizontalScrollView
+    在activity中的用法：
+     private ScroolView scroolView;
+       private List<PointF> pointFS = new ArrayList<>();//x,y
+      
  
 
   
