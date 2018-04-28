@@ -7,6 +7,6 @@ v1.0.0 暂时只是初步实现以上功能，后期会完善相应功能，和�
 # 如何引用：
  implementation 'com.github.raotongGitup:DuringView:v.1.0.0'
  如果出现以下问题：
- https://github.com/raotongGitup/DuringView/blob/master/img-folder/QQ%E6%88%AA%E5%9B%BE20180428094914.png
+ ![输入图片说明]https://github.com/raotongGitup/DuringView/blob/master/img-folder/QQ%E6%88%AA%E5%9B%BE20180428094914.png
  请在添加以下代码：
   
