@@ -1,22 +1,10 @@
 # DuringView
-To get a Git project into your build:
-
-Step 1. Add the JitPack repository to your build file
-
-gradle
-maven
-sbt
-leiningen
-Add it in your root build.gradle at the end of repositories:
-
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
-Step 2. Add the dependency
-
-	dependencies {
-	        implementation 'com.github.raotongGitup:DuringView:v.1.0.0'
-	}
+# 功能介绍：
+       DuringView是综合设置圆形图片，图片的双击放大和双击缩小，触摸放大缩小，安卓自定义view直线的画法，和自定义view曲线的画法，
+同时还有仿照360清理加速球的画法，卫星蜘蛛网图
+# 更新说明：
+v1.0.0 暂时只是初步实现以上功能，后期会完善相应功能，和添加新功能
+# 如何引用：
+ implementation 'com.github.raotongGitup:DuringView:v.1.0.0'
+ 如果出现以下问题：
+  
