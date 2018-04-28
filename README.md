@@ -17,15 +17,18 @@ v1.0.0 暂时只是初步实现以上功能，后期会完善相应功能，和�
 ![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095405.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095412.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095443.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095511.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095744.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095750.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095801.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-100014.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-100058.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-100105.jpg)
 # 使用方法：
 # 水波纹实现的使用方法如下：
-  在xml文件中添加;
-   <com.example.duringlibrary.wavesView.LD_WaveView
+  在xml文件中添加：
+  
+  <com.example.duringlibrary.wavesView.LD_WaveView
         android:id="@+id/ld_waveview"
         android:layout_centerInParent="true"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:wave_color="@color/colorAccent"
         app:wave_circle="true" />
+        
  在相应的activity中添加如下代码：
+ 
    ldWaveView = ((LD_WaveView) findViewById(R.id.ld_waveview));
         ldWaveView.setCircle(true);
         ldWaveView.setmProgress(40);
@@ -62,6 +65,7 @@ v1.0.0 暂时只是初步实现以上功能，后期会完善相应功能，和�
         radarView.initData(mElementBeanList);
         radarView.initMAX(100);
   #   双击放大图片和缩小图片实现只需在xml中添加即可,和imageview控件使用方法相同：
+  
       <com.example.duringlibrary.amplificationPhoto.ZoomImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
