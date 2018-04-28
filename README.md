@@ -65,7 +65,8 @@ v1.0.0 暂时只是初步实现以上功能，后期会完善相应功能，和�
         mElementBeanList.add(new ElementBean("辅助",50));
         radarView.initData(mElementBeanList);
         radarView.initMAX(100);
-  #   双击放大图片和缩小图片实现只需在xml中添加即可,和imageview控件使用方法相同：
+        
+ # 双击放大图片和缩小图片实现只需在xml中添加即可,和imageview控件使用方法相同：
   
       <com.example.duringlibrary.amplificationPhoto.ZoomImageView
         android:layout_width="match_parent"
