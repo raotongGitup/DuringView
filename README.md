@@ -65,8 +65,7 @@ v1.0.0 暂时只是初步实现以上功能，后期会完善相应功能，和�
         mElementBeanList.add(new ElementBean("辅助",50));
         radarView.initData(mElementBeanList);
         radarView.initMAX(100);
-        
- # 双击放大图片和缩小图片实现只需在xml中添加即可,和imageview控件使用方法相同：
+# 双击放大图片和缩小图片实现只需在xml中添加即可,和imageview控件使用方法相同：
   
       <com.example.duringlibrary.amplificationPhoto.ZoomImageView
         android:layout_width="match_parent"
@@ -74,6 +73,21 @@ v1.0.0 暂时只是初步实现以上功能，后期会完善相应功能，和�
         android:layout_centerInParent="true"
         android:scaleType="matrix"
         android:src="@drawable/flower" />
+#  折线的应用的画法
+      <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:background="#000"
+        android:scrollbars="none">
+
+        <com.example.dhf.duringview.satelliteSpiderView.ScroolView
+            android:id="@+id/scrollView_zx"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+    </HorizontalScrollView>
      
       
  
