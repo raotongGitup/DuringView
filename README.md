@@ -128,6 +128,6 @@ v1.0.0 暂时只是初步实现以上功能，后期会完善相应功能，和�
        setInCirclColor（）;// 内圆的颜色；
        setPointsdata（）；//是否显示每个数据点的值，默认是false
        setPointColor(); // 每个数据点的数据颜色；
- 
+  
 
   
