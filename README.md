@@ -107,6 +107,9 @@ v1.0.0 暂时只是初步实现以上功能，后期会完善相应功能，和�
         scroolView.setPointFS(pointFS);
         //以上是用的随机数，用的时候添加是哪个自己的数据即可;
       下面是介绍一些方法的而应用;
+       setMax();//y的数据的最大值
+       setMain()；// y的数据的最小值
+       setPointFS(),//传入的数据，x的值为 string类型，y值为float类型
        
  
 
