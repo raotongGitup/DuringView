@@ -3,10 +3,8 @@ package com.example.duringlibrary.satelliteSpiderView;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.Shader;
 import android.support.annotation.Nullable;
 import android.text.TextPaint;
 import android.util.AttributeSet;
@@ -75,8 +73,8 @@ public class ScroolView extends View {
     /*没个x轴之间的间隔数*/
     private int xinterval;
 
-    private Paint colorPaint;
-    private Path colorPath;
+//    private Paint colorPaint;
+//    private Path colorPath;
 
 
     public ScroolView(Context context) {
@@ -121,9 +119,9 @@ public class ScroolView extends View {
         xinterval = (max - main) / ynumber;
 
 
-        colorPaint = new Paint();
-        colorPaint.setStyle(Paint.Style.FILL);
-        colorPath = new Path();
+//        colorPaint = new Paint();
+//        colorPaint.setStyle(Paint.Style.FILL);
+//        colorPath = new Path();
 
 
     }
@@ -293,10 +291,10 @@ public class ScroolView extends View {
             float y = hight - dpToPx(20) - (((hight - dpToPx(50) - dpToPx(20)) / (max - main)) * pointFS.get(i).y);
             if (i == 0) {
                 path.moveTo(x, y);
-                colorPath.moveTo(x, y);
+                //colorPath.moveTo(x, y);
             } else {
                 path.lineTo(x, y);
-                colorPath.lineTo(x, y);
+               // colorPath.lineTo(x, y);
 
 
             }
@@ -307,11 +305,11 @@ public class ScroolView extends View {
          *
          * 渐变色的运用
          * */
-        Shader mShader = new LinearGradient(0, 0, 0, getHeight() - dpToPx(20), new int[]{
-                Color.parseColor("#B9E731"), Color.WHITE}, null, Shader.TileMode.CLAMP);
-        colorPaint.setShader(mShader);
+//        Shader mShader = new LinearGradient(0, 0, 0, getHeight() - dpToPx(20), new int[]{
+//                Color.parseColor("#B9E731"), Color.WHITE}, null, Shader.TileMode.CLAMP);
+//        colorPaint.setShader(mShader);
         canvas.drawPath(path, paint);
-        canvas.drawPath(colorPath, colorPaint);
+       // canvas.drawPath(colorPath, colorPaint);
     }
 
     //设置scrollerView的滚动条的位置，通过位置计算当前的时段
