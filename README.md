@@ -90,10 +90,24 @@ v1.0.0 暂时只是初步实现以上功能，后期会完善相应功能，和�
     </HorizontalScrollView>
     
     这个是直线可以左右滑动的如果不想滑动可以去掉HorizontalScrollView
+    
     在activity中的用法：
+    
      private ScroolView scroolView;
-       private List<PointF> pointFS = new ArrayList<>();//x,y
-      
+     private List<PointF> pointFS = new ArrayList<>();//x,y坐标数据 
+     在oncreat中的用法;
+     scroolView = ((ScroolView) findViewById(R.id.scrollView_zx));
+        Random random = new Random();
+        for (int i = 0; i < 30; i++) {
+            PointF f = new PointF();
+            f.x = i + "";
+            f.y = random.nextInt(100);
+            pointFS.add(f);
+        }
+        scroolView.setPointFS(pointFS);
+        //以上是用的随机数，用的时候添加是哪个自己的数据即可;
+      下面是介绍一些方法的而应用;
+       
  
 
   
