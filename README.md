@@ -11,4 +11,7 @@ v1.0.0 暂时只是初步实现以上功能，后期会完善相应功能，和�
  请在添加以下代码：
  
 ![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/QQ%E6%88%AA%E5%9B%BE20180428100437.png)
+
+实际效果图如下：
+
   
