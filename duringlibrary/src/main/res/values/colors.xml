@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorIcon">#EEEEEE</color>
+    <color name="colorWeatherInfoBgExtro">#992a2a30</color>
+    <color name="colorWeatherInfoBg">#e6434751</color>
+    <color name="btn_commit_pressed">#0b58b5</color>
+    <color name="btn_commit_normal">#157efb</color>
+    <color name="bg_bottom_light">#33000000</color>
+    <color name="rn_rect_color">#ff4987fa</color>
+
+    <color name="rb_textcolor_selected">#ffff0000</color>
+    <color name="rb_textcolor_normal">#ffffffff</color>
+
+    <color name="view_line">#e2e2e2</color>
+    <color name="search_blue">#5592ed</color>
+    <color name="white">#ffffff</color>
+    <color name="gray">#C0C0C0</color>
+
+    <color name="item_gray">#464646</color>
+    <color name="item_white">#d9d9d9</color>
+    <color name="bg_airport_body">#d83c3e45</color>
+    <color name="bg_airport_title">#38232321 </color>
+    <color name="tv_airport">#ffb8ddff</color>
+
+    <color name="tt_max_color">#EC8C96</color>
+    <color name="tt_min_color">#8AC7F5</color>
+
+    <color name="item_gray_dark">#ff2a2a2d</color>
+    <color name="item_gray_light">#ff49484d</color>
+
+    <color name="custom_map_style_grap">#efeff4</color>
+    <color name="custom_map_style_divider">#dedee1</color>
+
+
+
+    <color name="header_toast_bg">#ccebfc</color>
+    <color name="header_toast">#024ca1</color>
+    <color name="header_toast_line">#abdaf4</color>
+    <color name="offline_down_title">#909090</color>
+    <color name="offline_head_font">#FFFFFF</color>
+    <color name="gary">#898989</color>
+    <color name="taobao_black">#333333</color>
+    <color name="offline_down_size">#777777</color>
+    <color name="gray_lite">#c5c5c5</color>
+    <color name="progress_background">#ededed</color>
+    <color name="blue">#4c90f9</color>
+    <color name="itemlist">#f4f4f4</color>
+    <color name="act_background">#efefef</color>
+    <color name="phone_bg">#f6f6f6</color>
+    <color name="translucent">#66000000</color>
+    <color name="color666">#661B85FF</color>
+    <color name="color_1B85FF">#1B85FF</color>
+
+    <color name="color_cover">#663F51B5</color>
+    <color name="radio_bg_checked">#2e4658</color>
+    <color name="radio_bg_chec">#2F4658</color>
+
+
+
+    <color name="bg_blue">#78ED61</color>
+    <color name="txt_black">#FF0000</color>
+    <color name="text_yellow">#ffff00</color>
+</resources>
