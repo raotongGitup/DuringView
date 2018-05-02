@@ -34,6 +34,8 @@ public class BasehorizontaiScyollview extends View {
     float hifh_y = 0;
     private Context context;
 
+    private float getWith = spToPx(20);
+
     private List<PointF> pointFS = new ArrayList<>();
     private List<Float> cuicus_x = new ArrayList<>();
     private List<Float> cuicus_y = new ArrayList<>();
@@ -49,7 +51,15 @@ public class BasehorizontaiScyollview extends View {
      */
     Paint colorpaint;
     Path colorpath;
-    private String[] str = new String[]{"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月"};
+
+    /**
+     * 画数据点的数据
+     */
+    private TextPaint dataPaint;
+    private Path datapath;
+
+
+    private String[] str = new String[]{"1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "1月", "2月", "3月", "4月", "5月"};
 
     public BasehorizontaiScyollview(Context context) {
         super(context);
@@ -86,8 +96,16 @@ public class BasehorizontaiScyollview extends View {
         //colorpaint.setStyle(Paint.Style.FILL);
         colorpath = new Path();
 
+
+        dataPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG | Paint.LINEAR_TEXT_FLAG);
+        dataPaint.setColor(Color.RED);
+
+        dataPaint.setTextSize(spToPx(10));
+        datapath = new Path();
+
+
         Random random = new Random();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 15; i++) {
             PointF pointF = new PointF();
             pointF.x = random.nextInt(90);
             pointF.y = random.nextInt(90);
@@ -112,35 +130,35 @@ public class BasehorizontaiScyollview extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-//        int width = 0;
-//       int  hight = 0;
-//        //获得宽度MODE
-//        int modeW = MeasureSpec.getMode(widthMeasureSpec);
-//        //获得宽度的值
-//        if (modeW == MeasureSpec.AT_MOST) {
-//            width = MeasureSpec.getSize(widthMeasureSpec);
-//        }
-//        if (modeW == MeasureSpec.EXACTLY) {
-//            width = widthMeasureSpec;
-//        }
-//        if (modeW == MeasureSpec.UNSPECIFIED) {
-//           // width = (int) (pointFS.size() * with + with);
-//        }
-//        //获得高度MODE
-//        int modeH = MeasureSpec.getMode(heightMeasureSpec);
-//        //获得高度的值
-//        if (modeH == MeasureSpec.AT_MOST) {
-//            hight = MeasureSpec.getSize(heightMeasureSpec);
-//        }
-//        if (modeH == MeasureSpec.EXACTLY) {
-//            hight = heightMeasureSpec;
-//        }
-//        if (modeH == MeasureSpec.UNSPECIFIED) {
-//            //ScrollView和HorizontalScrollView
-//            hight = 400;
-//        }
-//        //设置宽度和高度
-//        setMeasuredDimension(width, hight);
+        int width = 0;
+        int hight = 0;
+        //获得宽度MODE
+        int modeW = MeasureSpec.getMode(widthMeasureSpec);
+        //获得宽度的值
+        if (modeW == MeasureSpec.AT_MOST) {
+            width = MeasureSpec.getSize(widthMeasureSpec);
+        }
+        if (modeW == MeasureSpec.EXACTLY) {
+            width = widthMeasureSpec;
+        }
+        if (modeW == MeasureSpec.UNSPECIFIED) {
+            width = (int) (pointFS.size() * getWith + with);
+        }
+        //获得高度MODE
+        int modeH = MeasureSpec.getMode(heightMeasureSpec);
+        //获得高度的值
+        if (modeH == MeasureSpec.AT_MOST) {
+            hight = MeasureSpec.getSize(heightMeasureSpec);
+        }
+        if (modeH == MeasureSpec.EXACTLY) {
+            hight = heightMeasureSpec;
+        }
+        if (modeH == MeasureSpec.UNSPECIFIED) {
+            //ScrollView和HorizontalScrollView
+            hight = 400;
+        }
+        //设置宽度和高度
+        setMeasuredDimension(width, hight);
     }
 
     @Override
@@ -158,7 +176,6 @@ public class BasehorizontaiScyollview extends View {
         canvas.drawLine(dpToPx(30), dpToPx(30), dpToPx(20), dpToPx(20), paint);
         canvas.drawLine(with - dpToPx(30), hight - dpToPx(30), with - dpToPx(20), hight - dpToPx(20), paint);
         canvas.drawLine(with - dpToPx(30), hight - dpToPx(10), with - dpToPx(20), hight - dpToPx(20), paint);
-
         /**
          * 绘制xy轴的值
          * */
@@ -176,8 +193,11 @@ public class BasehorizontaiScyollview extends View {
         paint.setStyle(Paint.Style.FILL);
         for (int i = 0; i < calculate_x.size(); i++) {
             canvas.drawCircle(calculate_x.get(i).eval(0), calculate_y.get(i).eval(0), 6, paint);
+            canvas.drawText(pointFS.get(i).y + "", calculate_x.get(i).eval(0), calculate_y.get(i).eval(0) - spToPx(5), dataPaint);
 
         }
+
+
     }
 
     private void drawXyLine(Canvas canvas) {
@@ -185,7 +205,7 @@ public class BasehorizontaiScyollview extends View {
         calculate_y = calculate(cuicus_y);
         Path path = new Path();
         path.moveTo(calculate_x.get(0).eval(0), calculate_y.get(0).eval(0));
-        colorpath.moveTo(calculate_x.get(0).eval(0), hight - dpToPx(20));
+        colorpath.moveTo(calculate_x.get(0).eval(0), hight - dpToPx(21));
         colorpath.lineTo(calculate_x.get(0).eval(0), calculate_y.get(0).eval(0));
         float lastmove = 0;
         for (int i = 0; i < calculate_x.size(); i++) {
@@ -194,16 +214,18 @@ public class BasehorizontaiScyollview extends View {
                 float u = (float) i1 / STEPS;
                 if (calculate_y.get(i).eval(u) > (hight - dpToPx(20))) {
                     path.lineTo(calculate_x.get(i).eval(u), hight - dpToPx(20));
+                    colorpath.lineTo(calculate_x.get(i).eval(u),hight-dpToPx(20));
                 } else {
                     path.lineTo(calculate_x.get(i).eval(u), calculate_y.get(i).eval(u));
+                    colorpath.lineTo(calculate_x.get(i).eval(u),calculate_y.get(i).eval(u));
                 }
-                colorpath.lineTo(calculate_x.get(i).eval(u), calculate_y.get(i).eval(u));
+
                 lastmove = calculate_x.get(i).eval(u);
                 Log.e("tagSt", calculate_x.get(i).eval(u) + "  hight " + calculate_y.get(i).eval(u));
             }
 
         }
-        colorpath.lineTo(lastmove, hight - dpToPx(20));
+        colorpath.lineTo(lastmove, hight - dpToPx(21));
         /**
          *
          * 渐变色的运用
@@ -217,9 +239,9 @@ public class BasehorizontaiScyollview extends View {
     }
 
     private void drawXy(Canvas canvas) {
-        with_x = (with - dpToPx(40)) / 10;
+        with_x = (with - dpToPx(40)) / pointFS.size();
         hifh_y = (hight - dpToPx(40)) / 5;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < pointFS.size(); i++) {
             canvas.drawText(str[i], dpToPx(20) + with_x * (i + 1), hight - dpToPx(5), textPaint);
             canvas.drawLine(dpToPx(20) + with_x * (i + 1), hight - dpToPx(20), dpToPx(20) + with_x * (i + 1), hight - dpToPx(30), paint);
             cuicus_x.add(dpToPx(20) + with_x * (i + 1));
