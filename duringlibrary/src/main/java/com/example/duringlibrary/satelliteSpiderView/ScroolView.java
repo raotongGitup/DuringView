@@ -3,11 +3,14 @@ package com.example.duringlibrary.satelliteSpiderView;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Shader;
 import android.support.annotation.Nullable;
 import android.text.TextPaint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -26,7 +29,6 @@ public class ScroolView extends View {
 
     /**
      * y轴高度
-     *
      */
     private int hight;
     Paint paint;
@@ -73,8 +75,13 @@ public class ScroolView extends View {
     /*没个x轴之间的间隔数*/
     private int xinterval;
 
-//    private Paint colorPaint;
-//    private Path colorPath;
+    /*是否添加渐变色*/
+    private boolean gradient = false;
+    /*是否需要背景十字架*/
+    private boolean backcross = false;
+
+    private Paint colorPaint;
+    private Path colorPath;
 
 
     public ScroolView(Context context) {
@@ -119,9 +126,9 @@ public class ScroolView extends View {
         xinterval = (max - main) / ynumber;
 
 
-//        colorPaint = new Paint();
-//        colorPaint.setStyle(Paint.Style.FILL);
-//        colorPath = new Path();
+        colorPaint = new Paint();
+        colorPaint.setStyle(Paint.Style.FILL);
+        colorPath = new Path();
 
 
     }
@@ -256,7 +263,10 @@ public class ScroolView extends View {
 
             } else {
                 canvas.drawText(xinterval * (i + 1) + "", dpToPx(7), hight - dpToPx(20) - yhight * i, textPaint);
-                canvas.drawLine(dpToPx(20), hight - dpToPx(20) - yhight * i, with * pointFS.size(), hight - dpToPx(20) - yhight * i, yPaint);
+                if (backcross) {
+                    canvas.drawLine(dpToPx(20), hight - dpToPx(20) - yhight * i, with * pointFS.size(), hight - dpToPx(20) - yhight * i, yPaint);
+                }
+
             }
         }
         textPaint.setColor(Color.parseColor(xzhiTitleColor));
@@ -266,7 +276,10 @@ public class ScroolView extends View {
                 canvas.drawText(pointFS.get(i).x + "", dpToPx(20) - dpToPx(5), hight - dpToPx(10), textPaint);
             } else {
                 canvas.drawText(pointFS.get(i).x + "", dpToPx(20) + i * with - dpToPx(5), hight - dpToPx(10), textPaint);
-                canvas.drawLine(dpToPx(20) + i * with, hight - dpToPx(20), dpToPx(20) + i * with, dpToPx(70), yPaint);
+                if (backcross) {
+                    canvas.drawLine(dpToPx(20) + i * with, hight - dpToPx(20), dpToPx(20) + i * with, dpToPx(70), yPaint);
+                }
+
             }
         }
 /**
@@ -286,34 +299,42 @@ public class ScroolView extends View {
         paint.setColor(Color.YELLOW);
         paint.setStrokeWidth(3);
         Path path = new Path();
+        colorPath.moveTo(dpToPx(20), hight - dpToPx(21));
         for (int i = 0; i < pointFS.size(); i++) {
             float x = i * with + dpToPx(20);
             float y = hight - dpToPx(20) - (((hight - dpToPx(50) - dpToPx(20)) / (max - main)) * pointFS.get(i).y);
             if (i == 0) {
                 path.moveTo(x, y);
-                //colorPath.moveTo(x, y);
+
             } else {
                 path.lineTo(x, y);
-               // colorPath.lineTo(x, y);
-
 
             }
+            colorPath.lineTo(x, y);
             circl.add(new PointF(x + "", y));
             canvas.drawCircle(x, y, 8, paintCire);
         }
+        colorPath.lineTo(pointFS.size() * with + dpToPx(20), hight - dpToPx(21));
+        colorPath.close();
         /**
          *
          * 渐变色的运用
          * */
-//        Shader mShader = new LinearGradient(0, 0, 0, getHeight() - dpToPx(20), new int[]{
-//                Color.parseColor("#B9E731"), Color.WHITE}, null, Shader.TileMode.CLAMP);
-//        colorPaint.setShader(mShader);
+        Shader mShader = new LinearGradient(0, 0, 0, getHeight() - dpToPx(20), new int[]{
+                Color.parseColor("#B9E731"), Color.WHITE}, null, Shader.TileMode.CLAMP);
+        colorPaint.setShader(mShader);
         canvas.drawPath(path, paint);
-       // canvas.drawPath(colorPath, colorPaint);
+
+        if (gradient) {
+            canvas.drawPath(colorPath, colorPaint);
+        }
+
     }
 
     //设置scrollerView的滚动条的位置，通过位置计算当前的时段
     public void setScrollOffset(int offset, int maxScrollOffset) {
+
+        Log.e("2222222", "setScrollOffset: " + offset + "最大" + maxScrollOffset);
 
         invalidate();
     }
@@ -439,6 +460,14 @@ public class ScroolView extends View {
 
     public void setPointColor(String pointColor) {
         this.pointColor = pointColor;
+    }
+
+    public void setGradient(boolean gradient) {
+        this.gradient = gradient;
+    }
+
+    public void setBackcross(boolean backcross) {
+        this.backcross = backcross;
     }
 }
 
