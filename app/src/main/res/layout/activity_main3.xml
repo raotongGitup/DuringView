@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:rv="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.dhf.duringview.Main3Activity">
-    <com.example.dhf.duringview.viewCircle.RadarView
+    <com.example.duringlibrary.viewCircle.RadarView
         android:layout_centerInParent="true"
         android:id="@+id/radarview"
         rv:maxRadius="95dp"
