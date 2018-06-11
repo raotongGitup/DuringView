@@ -157,6 +157,8 @@ public class BasehorizontaiScyollview extends View {
             //ScrollView和HorizontalScrollView
             hight = 400;
         }
+        with=width;
+        hight=hight;
         //设置宽度和高度
         setMeasuredDimension(width, hight);
     }
@@ -214,10 +216,10 @@ public class BasehorizontaiScyollview extends View {
                 float u = (float) i1 / STEPS;
                 if (calculate_y.get(i).eval(u) > (hight - dpToPx(20))) {
                     path.lineTo(calculate_x.get(i).eval(u), hight - dpToPx(20));
-                    colorpath.lineTo(calculate_x.get(i).eval(u),hight-dpToPx(20));
+                    colorpath.lineTo(calculate_x.get(i).eval(u), hight - dpToPx(20));
                 } else {
                     path.lineTo(calculate_x.get(i).eval(u), calculate_y.get(i).eval(u));
-                    colorpath.lineTo(calculate_x.get(i).eval(u),calculate_y.get(i).eval(u));
+                    colorpath.lineTo(calculate_x.get(i).eval(u), calculate_y.get(i).eval(u));
                 }
 
                 lastmove = calculate_x.get(i).eval(u);
@@ -239,7 +241,7 @@ public class BasehorizontaiScyollview extends View {
     }
 
     private void drawXy(Canvas canvas) {
-        with_x = (with - dpToPx(40)) / pointFS.size();
+        with_x = (with - dpToPx(100)) / pointFS.size();
         hifh_y = (hight - dpToPx(40)) / 5;
         for (int i = 0; i < pointFS.size(); i++) {
             canvas.drawText(str[i], dpToPx(20) + with_x * (i + 1), hight - dpToPx(5), textPaint);
