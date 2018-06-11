@@ -1,4 +1,4 @@
-package com.example.duringlibrary;
+package com.example.duringlibrary.amplificationPhoto;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
