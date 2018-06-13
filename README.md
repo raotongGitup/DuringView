@@ -10,7 +10,7 @@ v1.0.1 折线中添加了填充渐变色，同时提供渐变色的颜色和渐�
        
 
 # 如何引用：
- 最新代码：
+ 最新版本：
  implementation 'com.github.raotongGitup:DuringView:v.1.0.1'
  
  如果出现以下问题：
