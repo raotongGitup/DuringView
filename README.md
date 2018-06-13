@@ -108,25 +108,45 @@ v1.0.0 暂时只是初步实现以上功能，后期会完善相应功能，和�
        //以上是用的随机数，用的时候添加是哪个自己的数据即可;
       下面是介绍一些方法的而应用;
        setMax();//y的数据的最大值；
+       
        setMain()；// y的数据的最小值；
+       
        setPointFS(),//传入的数据，x的值为 string类型，y值为float类型；
+       
        setYtitle()；//y轴所表示的单位列如（km/S）；
+       
        setYtitlecolor();//y轴所表示单位的颜色；
+       
        setYtitleSize（）；// y轴所表示单位的大小；
+       
        setXtitle（）；//x轴所表示的意义 列如（月份）；
+       
        setXtitleColor（）；// x轴所表示的意义的颜色；
+       
        setXtitleSize（）; // x轴所表示的意义的大小；
+       
        setYzhiTitleColor（）；// y轴值得颜色；
+       
        setYzhiSize（）; // y轴值的大小；
+       
        setXzhiTitleColor（）;//x轴值的颜色；
+       
        setXzhiSize（）；//x轴的大小；
+       
        setXyColor（）; // xy轴的颜色；
+       
        xyBgColor（）; // xy轴背景的十字架颜色；
+       
        setYnumber（）；// y轴显示数据个数；
+       
        setSolidround（）；//数据点是否显示内外圆，默认是false；
+       
        setOutCircleColor（）;// 外圆的颜色；
+       
        setInCirclColor（）;// 内圆的颜色；
+       
        setPointsdata（）；//是否显示每个数据点的值，默认是false
+       
        setPointColor(); // 每个数据点的数据颜色；
   
 
