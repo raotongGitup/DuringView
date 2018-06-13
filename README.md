@@ -170,6 +170,11 @@ v1.0.1 折线中添加了填充渐变色，同时提供渐变色的颜色和渐�
        setPointsdata（）；//是否显示每个数据点的值，默认是false
        
        setPointColor(); // 每个数据点的数据颜色；
+       
+       setGradient（）; // 是否显示填充的渐变色；
+       
+       setFillColor（）；// 填充渐变色的两种颜色；
+       
   
 
   
