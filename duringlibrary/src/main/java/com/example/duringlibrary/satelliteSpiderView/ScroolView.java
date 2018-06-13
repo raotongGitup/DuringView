@@ -84,6 +84,9 @@ public class ScroolView extends View {
     private Path colorPath;
 
 
+    private String FillColor = "#B9E731";
+    private String FillDOwnColor = "#ffffff";
+
     public ScroolView(Context context) {
         super(context);
         this.context = context;
@@ -321,7 +324,7 @@ public class ScroolView extends View {
          * 渐变色的运用
          * */
         Shader mShader = new LinearGradient(0, 0, 0, getHeight() - dpToPx(20), new int[]{
-                Color.parseColor("#B9E731"), Color.WHITE}, null, Shader.TileMode.CLAMP);
+                Color.parseColor(FillColor), Color.parseColor(FillDOwnColor)}, null, Shader.TileMode.CLAMP);
         colorPaint.setShader(mShader);
         canvas.drawPath(path, paint);
 
@@ -469,6 +472,12 @@ public class ScroolView extends View {
     public void setBackcross(boolean backcross) {
         this.backcross = backcross;
     }
+
+    public void setFillColor(String upcolor, String downcolor) {
+        this.FillColor = upcolor;
+        this.FillDOwnColor = downcolor;
+    }
+
 }
 
 
