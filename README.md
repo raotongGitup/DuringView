@@ -7,11 +7,12 @@ v1.0.0 暂时只是初步实现以上功能，后期会完善相应功能，和�
 
 v1.0.1 折线中添加了填充渐变色，同时提供渐变色的颜色和渐变色的添加 
        同时添加了曲线的画法和曲线渐变色的填充，
+v.2.0 添加了仿照qq的运动步数统计       
        
 
 # 如何引用：
  最新版本：
- implementation 'com.github.raotongGitup:DuringView:v.1.0.1'
+ implementation 'com.github.raotongGitup:DuringView:v.2.0'
  
  如果出现以下问题：
  
@@ -22,7 +23,8 @@ v1.0.1 折线中添加了填充渐变色，同时提供渐变色的颜色和渐�
 
 # 实际效果图如下：
 
-![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095405.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095412.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095443.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095511.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095744.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095750.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095801.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-100014.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-100058.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-100105.jpg)
+![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095405.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095412.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095443.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095511.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095744.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095750.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-095801.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-100014.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-100058.jpg)![Image text](https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80428-100105.jpg)![Image text]
+(https://github.com/raotongGitup/DuringView/blob/master/img-folder/S80627-160408.jpg)
 # 使用方法：
 # 水波纹实现的使用方法如下：
 
@@ -175,6 +177,17 @@ v1.0.1 折线中添加了填充渐变色，同时提供渐变色的颜色和渐�
        
        setFillColor（）；// 填充渐变色的两种颜色；
        
+ #  运动步数统计的用法
+    在Xml添加以下代码：
+     <com.example.duringlibrary.movementSteps.StepsArcView
+        android:id="@+id/stepsArcview"
+        android:layout_centerInParent="true"
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
+        在代码中添加代码：
+        stepsArcView.setData(2000);
+        
+        
   
 
   
